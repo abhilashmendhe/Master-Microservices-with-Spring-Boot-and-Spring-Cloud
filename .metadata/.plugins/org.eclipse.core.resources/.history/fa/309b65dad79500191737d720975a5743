@@ -1,0 +1,26 @@
+package com.in28minutes.rest.webservices.restfulwebservices;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+
+	@GetMapping(value = "/hello-world")
+	public String welcomecontroller()
+	{
+		return "Hello Resful Services Controller!!!";
+	}
+	
+	@GetMapping(value = "/hello-world-bean")
+	public HelloWorldBean helloWorldBean()
+	{
+		return new HelloWorldBean("Hello World");
+	}
+	
+	@GetMapping(value = "/hello-world-bean/path-variable/{name}")
+	public HelloWorldBean helloWorldBean()
+	{
+		return new HelloWorldBean("Hello World");
+	}
+}
